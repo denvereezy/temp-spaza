@@ -1,0 +1,18 @@
+<body id ="background">
+<div id="container">
+    <input id="category_sales_search" class="searchBar" type="text" name="Name" placeholder="Search"></input>
+<table id="catsales" class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Categories</th>
+            <th>Qty Sold</th>
+        </tr>
+    </thead>
+            <tr>
+                {{#each products}}
+                <td>{{Name}}</td>
+                <td>{{TotalQty}}</td>
+            </tr>
+            {{/each}}
+    </table>
+</div></body>

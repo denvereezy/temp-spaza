@@ -1,0 +1,19 @@
+<body id ="background">
+<div id="container">
+<table class="table table-striped custab">
+    <thead>
+        <tr>
+       		<th>Product</th>
+       		<th>Amount sold</th>
+        </tr>
+    </thead>
+            <tr>
+                {{#each products}}
+                <td>{{Name}}</td>
+                <td>{{TotalQty}}</td>     
+            </tr>
+            {{/each}}
+</table>
+</div>
+</body>
+

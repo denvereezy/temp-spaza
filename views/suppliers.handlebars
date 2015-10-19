@@ -1,0 +1,68 @@
+
+<div id="container">
+    {{#in_ca}}
+<div id="addProduct">
+
+<form action="suppliers/add" method="POST" class="form-horizontal" >
+        <div class="form-group">
+               <h1>Add a Supplier</h1>
+		<label for="Amount" class="control-label col-xs-2">Name:</label>	 
+		 <div class="col-xs-10">
+			<input id="newName" type="text" name="Name" class="form-control" placeholder="Please Enter A Supplier" required>
+		</div>
+	</div>
+
+ 	<input type="submit" class="btn btn-primary" onclick="myFunction()">
+       
+   
+
+</form>
+</div>
+
+
+        <form>
+	<input class="searchBar" id="supplier_search" type="text" name="Name" placeholder="Search"></input>
+</form>
+<table id="suppliers" class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Supplier</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+            <tr>
+                {{#each suppliers}}
+                <td>{{Name}}</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="/suppliers/suppliers_edit/{{Id}}"><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+
+<a href="/suppliers/delete/{{Id}}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?')"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+            </tr>
+            {{/each}}
+    </table>
+
+
+{{/in_ca}}
+{{#action}}
+<table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Supplier</th>
+        </tr>
+    </thead>
+            <tr>
+                {{#each suppliers}}
+                <td>{{Name}}</td>
+            </tr>
+            {{/each}}
+    </table>
+
+{{/action}}
+</div>
+<script>
+function myFunction() {
+    
+    alert("New supplier added");
+   
+}
+</script>
+<script src="/js/search.js"></script>

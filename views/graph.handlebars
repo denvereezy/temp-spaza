@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<style>
+  
+       a{
+        color:black;
+        font-size:20px;
+        }
+
+
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		animationEnabled: true,
+		title:{
+			text: "Category chart"
+		},
+		data: [
+		{
+			type: "pie",
+			dataPoints: [
+
+
+				{{#each products}}
+					{ label: "{{Name}}", y: {{TotalQty}} },
+  				{{/each}}
+	
+			]
+		}
+		]
+		});
+
+	chart.render();
+}
+</script>
+<script type="text/javascript" src="./canvasjs.min.js"></script>
+</head>
+<body>
+<div id="chartContainer" style="height: 700px; width: 100%;"></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<body id ="background">
+<div id="container">
+<input id="earnings_search" class="searchBar" type="text" name="Name" placeholder="Search"></input>
+<table id="product_earnings" class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Amount(R)</th>
+        </tr>
+    </thead>
+            <tr>
+                {{#each products}}
+                <td>{{Name}}</td>
+                <td>{{TotalEarnings}}</td>
+            </tr>
+            {{/each}}
+    </table></div>
+</body>

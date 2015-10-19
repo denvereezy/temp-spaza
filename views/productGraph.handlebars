@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		animationEnabled: true,
+		title:{
+			text: "Product chart"
+		},
+		data: [
+		{
+			type: "bar", 
+			dataPoints: [
+
+
+				{{#each products}}
+					{ label: "{{Name}}", y: {{TotalQty}} },
+  				{{/each}}
+	
+			]
+		}
+		]
+		});
+
+	chart.render();
+}
+</script>
+<script type="text/javascript" src="./canvasjs.min.js"></script>
+</head>
+<body>
+<div id="chartContainer" style="height: 700px; width: 100%;"></div>
+</body>
+</html>

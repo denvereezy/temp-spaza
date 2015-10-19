@@ -1,0 +1,15 @@
+<body id ="background">
+<div id="container">
+<ul class="people_list">
+<h1>Edit</h1>
+
+{{#data}}
+<form action="/categories/update/{{Id}}" method="POST">
+	Description: <input type="text" name="Name" value="{{Name}}" required>	
+	<input type="submit">
+
+</form>
+{{/data}}
+</ul>
+</div>
+</body>
